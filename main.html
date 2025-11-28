@@ -2,151 +2,310 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <!-- Адаптив -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Путеводитель по достопримечательностям Курска</title>
-    <!-- Google Fonts -->
+
+    <!-- Шрифты и иконки -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Playfair+Display:400,700&subset=latin,cyrillic">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Custom styles -->
+
+    <!-- Наши стили -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Наш скрипт -->
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <!-- Header with navigation -->
+<body id="top">
+
+    <!-- =================== ШАПКА САЙТА =================== -->
     <header>
         <nav class="container">
-            <!-- Logo -->
-            <a class="logo" href="#">KURSK</a>
-            <!-- Hamburger icon for mobile -->
-            <div class="nav-toggle"><span></span></div>
-            <!-- Navigation menu -->
+
+            <!-- Логотип: буквы KURSK -->
+            <a class="logo" href="#top">
+                <span>K</span>
+                <span>U</span>
+                <span>R</span>
+                <span>S</span>
+                <span>K</span>
+            </a>
+
+            <!-- Кнопка "гамбургер" для мобильного меню -->
+            <div class="nav-toggle">
+                <span></span>
+            </div>
+
+            <!-- Главное меню -->
             <ul id="menu">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Центр города</a></li>
-                <li><a href="#">Храмы</a></li>
-                <li><a href="#">Парки и природа</a></li>
-                <li><a href="#">Полезная информация</a></li>
+                <li><a href="#top">Главная</a></li>
+                <li><a href="#center">Центр города</a></li>
+                <li><a href="#temples">Храмы</a></li>
+                <li><a href="#parks">Парки и природа</a></li>
+                <li><a href="#info">Полезная информация</a></li>
             </ul>
+
         </nav>
     </header>
 
+    <!-- =============== ОСНОВНОЙ КОНТЕНТ + САЙДБАР =============== -->
     <div class="container">
-        <!-- Posts list -->
+
         <div class="posts-list">
-            <!-- Красная площадь -->
-            <div class="post" data-title="Красная площадь" data-info="Красная площадь — сердце Курска. Здесь проходят городские мероприятия, парады и концерты, а также располагаются памятники и административные здания. Рядом находятся Знаменский собор и Триумфальная арка.">
-                <div class="post-image"><img src="img/red_square.jpg" alt="Красная площадь в Курске"></div>
+
+            <!-- 1. Красная площадь (Центр города) -->
+            <article class="post" id="center"
+                     data-title="Красная площадь"
+                     data-info="Красная площадь — главная площадь Курска. Здесь проходят городские праздники, концерты, парады. Вокруг расположены административные здания, памятники и прогулочные зоны. Отсюда удобно начать знакомство с историческим центром города.">
+                <div class="post-image">
+                    <img src="img/red_square.jpg" alt="Красная площадь в Курске">
+                </div>
+
                 <div class="post-content">
+                    <div class="category">
+                        <a href="#center">Центр города</a>
+                    </div>
+
                     <h2 class="post-title">Красная площадь</h2>
-                    <p>Главная площадь Курска и одна из самых узнаваемых его достопримечательностей. Отличная отправная точка для прогулки.</p>
+
+                    <p>
+                        Главная площадь Курска и одна из самых узнаваемых его достопримечательностей.
+                        Здесь проходят городские праздники, концерты, парады и массовые мероприятия.
+                    </p>
+
                     <div class="post-footer">
                         <button class="more-btn">Подробнее</button>
+                        <div class="post-social">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Знаменский собор -->
-            <div class="post" data-title="Знаменский кафедральный собор" data-info="Знаменский собор — главный православный храм Курска. Построен в начале XIX века, хранит Курскую Коренную икону «Знамение». Внутри — богатое убранство и старинные иконы, вечером храм красиво подсвечивается.">
-                <div class="post-image"><img src="img/znamensky_sobor.jpg" alt="Знаменский собор"></div>
+            <!-- 2. Знаменский кафедральный собор (Храмы) -->
+            <article class="post" id="temples"
+                     data-title="Знаменский кафедральный собор"
+                     data-info="Знаменский кафедральный собор — один из главных православных храмов Курска. Храм связан с Курской Коренной иконой Божией Матери «Знамение». Внутри — богатое убранство, а вечером собор красиво подсвечивается и отлично смотрится на фотографиях.">
+                <div class="post-image">
+                    <img src="img/znamensky_sobor.jpg" alt="Знаменский собор в Курске">
+                </div>
+
                 <div class="post-content">
-                    <h2 class="post-title">Знаменский собор</h2>
-                    <p>Один из главных храмов Курска, известный своей архитектурой и духовной историей.</p>
+                    <div class="category">
+                        <a href="#temples">Храмы</a>
+                    </div>
+
+                    <h2 class="post-title">Знаменский кафедральный собор</h2>
+
+                    <p>
+                        Один из главных православных храмов Курска, построенный в классическом стиле.
+                        Собор является важным духовным центром и архитектурной доминантой города.
+                    </p>
+
                     <div class="post-footer">
                         <button class="more-btn">Подробнее</button>
+                        <div class="post-social">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Коренная пустынь -->
-            <div class="post" data-title="Коренная пустынь" data-info="Коренная пустынь находится недалеко от Курска. Монастырский комплекс в окружении леса и реки Тускарь. Место паломничества, особо популярно летом. Здесь проводится традиционный крестный ход с Курской иконой.">
-                <div class="post-image"><img src="img/kursk_root_hermitage.jpg" alt="Коренная пустынь"></div>
+            <!-- 3. Коренная пустынь (Пригород) -->
+            <article class="post" id="suburbs"
+                     data-title="Коренная пустынь"
+                     data-info="Коренная пустынь — монастырский комплекс в живописном месте недалеко от Курска. Окружена лесом и рекой Тускарь. Популярное место паломничества и загородных прогулок, особенно летом.">
+                <div class="post-image">
+                    <img src="img/kursk_root_hermitage.jpg" alt="Коренная пустынь под Курском">
+                </div>
+
                 <div class="post-content">
+                    <div class="category">
+                        <a href="#suburbs">Пригород</a>
+                    </div>
+
                     <h2 class="post-title">Коренная пустынь</h2>
-                    <p>Монастырь и живописные окрестности недалеко от Курска. Популярное место отдыха и паломничества.</p>
+
+                    <p>
+                        Живописный монастырский комплекс, известный не только историей, но и красивой природой вокруг:
+                        лес, река Тускарь и прогулочные тропы.
+                    </p>
+
                     <div class="post-footer">
                         <button class="more-btn">Подробнее</button>
+                        <div class="post-social">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Триумфальная арка -->
-            <div class="post" data-title="Триумфальная арка" data-info="Триумфальная арка — памятник, посвящённый победе в Курской битве. Расположена у проспекта Победы. Рядом находится мемориальный комплекс, музейные экспозиции и аллея славы.">
-                <div class="post-image"><img src="img/triumph_arch.jpg" alt="Триумфальная арка"></div>
+            <!-- 4. Триумфальная арка (Памятники) -->
+            <article class="post" id="monuments"
+                     data-title="Триумфальная арка"
+                     data-info="Триумфальная арка в Курске посвящена победе в Курской битве. Находится поблизости от проспекта Победы и является одной из визитных карточек города. Рядом — мемориальная зона и музейные объекты.">
+                <div class="post-image">
+                    <img src="img/triumph_arch.jpg" alt="Триумфальная арка в Курске">
+                </div>
+
                 <div class="post-content">
+                    <div class="category">
+                        <a href="#monuments">Памятники</a>
+                    </div>
+
                     <h2 class="post-title">Триумфальная арка</h2>
-                    <p>Монумент в честь победы в Курской битве, одна из визитных карточек города.</p>
-                    <div class="post-footer">
-                        <button class="more-btn">Подробнее</button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Парк имени 1 Мая -->
-            <div class="post" data-title="Парк имени 1 Мая" data-info="Парк имени 1 Мая — один из старейших парков Курска. Здесь множество аллей, аттракционов и зелёных зон. Отличное место для прогулок с детьми, занятий спортом и отдыха.">
-                <div class="post-image"><img src="img/park1may.jpg" alt="Парк имени 1 Мая"></div>
-                <div class="post-content">
-                    <h2 class="post-title">Парк имени 1 Мая</h2>
-                    <p>Популярный городской парк с аттракционами, зелеными аллеями и местами для отдыха.</p>
+                    <p>
+                        Монумент, посвящённый победе в Курской битве и подвигу защитников Отечества.
+                        Популярное место для прогулок и фотографий.
+                    </p>
+
                     <div class="post-footer">
                         <button class="more-btn">Подробнее</button>
+                        <div class="post-social">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
+
+            <!-- 5. Парк имени 1 Мая (Парки и природа) -->
+            <article class="post" id="parks"
+                     data-title="Парк имени 1 Мая"
+                     data-info="Парк имени 1 Мая — один из старейших парков Курска. Здесь есть аллеи, аттракционы, спортивные площадки и зоны отдыха. Летом часто проходят городские мероприятия и фестивали.">
+                <div class="post-image">
+                    <img src="img/park1may.jpg" alt="Парк имени 1 Мая в Курске">
+                </div>
+
+                <div class="post-content">
+                    <div class="category">
+                        <a href="#parks">Парки и отдых</a>
+                    </div>
+
+                    <h2 class="post-title">Парк имени 1 Мая</h2>
+
+                    <p>
+                        Любимое место прогулок горожан. Подходит для отдыха с детьми и активного досуга.
+                    </p>
+
+                    <div class="post-footer">
+                        <button class="more-btn">Подробнее</button>
+                        <div class="post-social">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Блок "Полезная информация" -->
+            <section class="post" id="info">
+                <div class="post-content">
+                    <div class="category">
+                        <a href="#info">Полезная информация</a>
+                    </div>
+                    <h2 class="post-title">Полезная информация для туристов</h2>
+                    <p>
+                        До большинства достопримечательностей можно добраться городским транспортом:
+                        автобусами, троллейбусами и маршрутными такси. Исторический центр удобно
+                        исследовать пешком.
+                    </p>
+                    <p>
+                        Перед посещением музеев и храмов рекомендуется уточнять режим работы.
+                        Летом популярны прогулки по паркам и выезды в Коренную пустынь.
+                    </p>
+                </div>
+            </section>
+
         </div>
 
-        <!-- Sidebar -->
+        <!-- ПРАВАЯ КОЛОНКА: виджеты (категории, маршруты, подписка) -->
         <aside>
+
+            <!-- Виджет категорий -->
             <div class="widget">
-                <h3>Категории мест</h3>
-                <ul>
-                    <li><a href="#">Центр города</a></li>
-                    <li><a href="#">Храмы</a></li>
-                    <li><a href="#">Парки и природа</a></li>
-                    <li><a href="#">Памятники и музеи</a></li>
-                    <li><a href="#">Пригород</a></li>
+                <h3 class="widget-title">Категории мест</h3>
+                <ul class="widget-category-list">
+                    <li><a href="#center">Центр города</a> (5)</li>
+                    <li><a href="#temples">Храмы</a> (3)</li>
+                    <li><a href="#parks">Парки и природа</a> (4)</li>
+                    <li><a href="#monuments">Памятники и музеи</a> (6)</li>
+                    <li><a href="#suburbs">Пригород</a> (2)</li>
                 </ul>
             </div>
+
+            <!-- Виджет популярных маршрутов -->
             <div class="widget">
-                <h3>Готовые маршруты</h3>
-                <ul>
-                    <li><strong>Исторический центр</strong><br>Красная площадь → Знаменский собор → Триумфальная арка</li>
-                    <li><strong>Пригород Курска</strong><br>Выезд в Коренную пустынь и прогулка по окрестностям</li>
+                <h3 class="widget-title">Готовые маршруты</h3>
+                <ul class="widget-posts-list">
+                    <li>
+                        <div class="post-image-small">
+                            <a href="#center"><img src="img/red_square.jpg" alt="Маршрут по центру Курска"></a>
+                        </div>
+                        <h4 class="widget-post-title">Исторический центр за один день</h4>
+                        <p>Красная площадь → Знаменский собор → Триумфальная арка</p>
+                    </li>
+                    <li>
+                        <div class="post-image-small">
+                            <a href="#suburbs"><img src="img/kursk_root_hermitage.jpg" alt="Маршрут в Коренную пустынь"></a>
+                        </div>
+                        <h4 class="widget-post-title">Выезд в Коренную пустынь</h4>
+                        <p>Прогулка по монастырю и окрестностям</p>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Виджет подписки -->
             <div class="widget">
-                <h3>Подписка на обновления</h3>
+                <h3 class="widget-title">Подписка на обновления</h3>
                 <p>Получайте новые маршруты и советы по путешествиям по Курску на email.</p>
-                <form action="#" method="post">
+                <form action="#" method="post" id="subscribe">
                     <input type="email" name="email" placeholder="Ваш email" required>
-                    <button type="submit"><i class="fa fa-paper-plane"></i> Подписаться</button>
+                    <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
                 </form>
             </div>
+
         </aside>
+
     </div>
 
-    <!-- Footer -->
+    <!-- =================== ПОДВАЛ САЙТА =================== -->
     <footer>
         <div class="container">
-            <span>Путеводитель по Курску © 2025</span>
-            <div class="social-bar-wrap">
-                <a title="VK" href="#"><i class="fa fa-vk"></i></a>
-                <a title="Telegram" href="#"><i class="fa fa-telegram"></i></a>
-                <a title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+            <div class="footer-col">
+                <span>Путеводитель по Курску © 2025</span>
             </div>
-            <a href="mailto:a.battlehog@mail.ru">Написать разработчику</a>
+            <div class="footer-col">
+                <div class="social-bar-wrap">
+                    <a title="VK" href="#"><i class="fa fa-vk"></i></a>
+                    <a title="Telegram" href="#"><i class="fa fa-telegram"></i></a>
+                    <a title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <a href="mailto:info@kursk-guide.ru">Написать разработчику</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Модальное окно «Подробнее» -->
     <div id="modal" class="modal">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Закрыть">&times;</button>
             <h2 id="modal-title"></h2>
             <p id="modal-text"></p>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
 </body>
 </html>

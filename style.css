@@ -1,325 +1,418 @@
+/* ===== СБРОС И БАЗА ===== */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  transition: .3s ease-in-out;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: .3s ease-in-out;
 }
 
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #373737;
-  background: #f7f7f7;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #373737;
+    background: #f7f7f7;
 }
 
 img {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Container */
+ul { list-style: none; }
+
 .container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 15px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* Header and navigation */
+header::after,
+.container::after,
+footer::after,
+.widget-posts-list li::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ===== ШАПКА ===== */
 header {
-  background: #fff;
-  padding: 15px 0;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
 }
 
+/* ЛОГОТИП */
 .logo {
-  float: left;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #1E88E5;
+    float: left;
 }
 
+.logo span {
+    color: #fff;
+    display: inline-block;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin: 5px 3px 5px 0;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0,0,0,.4);
+}
+
+/* цвета логотипа */
+.logo span:nth-child(1) { background: #1E88E5; }
+.logo span:nth-child(2) { background: #43A047; }
+.logo span:nth-child(3) { background: #FB8C00; }
+.logo span:nth-child(4) { background: #E53935; }
+.logo span:nth-child(5) { background: #8E24AA; }
+
+/* МЕНЮ */
+#menu {
+    float: right;
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#menu li:last-child { margin-right: 0; }
+
+#menu a {
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+#menu a:hover {
+    color: #1E88E5;
+}
+
+/* КНОПКА-БУРГЕР (по умолчанию скрыта) */
 .nav-toggle {
-  display: none;
-  position: relative;
-  float: right;
-  width: 40px;
-  height: 40px;
-  margin-left: 15px;
-  background: #1E88E5;
-  cursor: pointer;
+    display: none;
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    background: #1E88E5;
+    cursor: pointer;
 }
 
 .nav-toggle span {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  right: 8px;
-  height: 2px;
-  background: #fff;
-  transform: translateY(-50%);
+    position: absolute;
+    top: 19px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: #fff;
 }
 
 .nav-toggle span::before,
 .nav-toggle span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #fff;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
 }
 
-.nav-toggle span::before {
-  top: -6px;
+.nav-toggle span::before { top: -8px; }
+.nav-toggle span::after  { bottom: -8px; }
+
+/* класс для раскрытого меню на мобильном */
+#menu.active {
+    max-height: 260px;
 }
 
-.nav-toggle span::after {
-  top: 6px;
-}
-
-#menu {
-  float: right;
-}
-
-#menu li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-#menu li:last-child {
-  margin-right: 0;
-}
-
-#menu a {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  color: #373737;
-}
-
-#menu a:hover {
-  color: #1E88E5;
-}
-
-/* Posts and sidebar layout */
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .posts-list {
-  float: left;
-  width: 64%;
+    width: 64%;
+    float: left;
+    margin-bottom: 30px;
 }
 
-aside {
-  float: right;
-  width: 33%;
-}
-
-/* Post card */
 .post {
-  background: #fff;
-  margin-bottom: 30px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    background: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
 }
 
 .post-content {
-  padding: 15px;
+    padding: 15px 20px 20px;
+}
+
+.category {
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category a {
+    color: #1E88E5;
 }
 
 .post-title {
-  margin: 10px 0;
-  font-size: 22px;
-  font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
 }
 
 .post-footer {
-  margin-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #EBEBE3;
+    padding-top: 10px;
+    position: relative;
 }
 
+/* кнопка "Подробнее" */
 .more-btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background: #1E88E5;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 2px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: #1E88E5;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: .08em;
 }
 
 .more-btn:hover {
-  background: #1565C0;
+    background: #1565C0;
 }
 
-/* Widget (sidebar) */
+.post-social {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.post-social a {
+    display: inline-block;
+    margin-left: 8px;
+    color: #1E88E5;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 13px;
+}
+
+/* ===== САЙДБАР ===== */
+aside {
+    width: 33%;
+    float: right;
+}
+
 .widget {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 30px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 20px 15px;
+    background: #fff;
+    font-size: 13px;
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 1px rgba(0,0,0,.05);
 }
 
-.widget h3 {
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+.widget-title {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #1E88E5;
+    box-shadow: 3px 3px 0 0 #1E88E5;
+    letter-spacing: 1px;
 }
 
-.widget ul {
-  list-style: none;
+.widget-category-list li {
+    border-bottom: 1px solid #EBEBE3;
+    padding: 10px 0;
+    color: #c6c6c6;
+    font-style: italic;
 }
 
-.widget ul li {
-  margin-bottom: 8px;
-  font-size: 13px;
+.widget-category-list li:last-child { border-bottom: none; }
+
+.widget-category-list li a {
+    color: #626262;
+    margin-right: 6px;
+    font-style: normal;
 }
 
-.widget form {
-  margin-top: 10px;
+.widget-category-list li a::before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+    color: #c6c6c6;
 }
 
-.widget input[type="email"] {
-  width: calc(100% - 40px);
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  font-size: 13px;
+/* маленькие записи (маршруты) */
+.widget-posts-list li {
+    border-top: 1px solid #EBEBE3;
+    padding: 15px 0;
 }
 
-.widget button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 10px;
-  margin-left: 5px;
-  background: #1E88E5;
-  color: #fff;
-  border: none;
-  border-radius: 2px;
-  font-size: 13px;
-  cursor: pointer;
+.widget-posts-list li:first-child { border-top: none; }
+
+.post-image-small {
+    width: 30%;
+    float: left;
+    margin-right: 15px;
 }
 
-.widget button i {
-  margin-right: 4px;
+.widget-post-title {
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-.widget button:hover {
-  background: #1565C0;
+/* форма подписки */
+#subscribe {
+    position: relative;
+    padding: 15px 0 0;
 }
 
-/* Footer */
+#subscribe input {
+    width: 100%;
+    border: 2px solid #EBEBE3;
+    padding: 0 0 0 10px;
+    height: 40px;
+    outline: none;
+    color: #9E9C9C;
+    font-style: italic;
+}
+
+#subscribe button {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    padding: 0 15px;
+    font-size: 18px;
+    color: #1E88E5;
+    cursor: pointer;
+}
+
+/* ===== ПОДВАЛ ===== */
 footer {
-  background: #fff;
-  padding: 20px 0;
-  margin-top: 30px;
-  text-align: center;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  font-size: 13px;
+    padding: 20px 0;
+    background: #fff;
+    box-shadow: 0 -3px 1px rgba(0,0,0,.05);
+    margin-top: 30px;
 }
 
-footer .social-bar-wrap a {
-  margin: 0 5px;
-  color: #1E88E5;
-  font-size: 18px;
+.footer-col {
+    float: left;
+    width: 33.333%;
+    text-align: center;
+    font-size: 13px;
 }
 
-footer .social-bar-wrap a:hover {
-  color: #1565C0;
+.social-bar-wrap a {
+    margin: 0 5px;
+    color: #1E88E5;
+    font-size: 18px;
 }
 
-/* Modal styles */
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal.active {
-  display: flex;
+    display: flex;
 }
 
 .modal-content {
-  background: #fff;
-  padding: 20px;
-  max-width: 600px;
-  width: 90%;
-  border-radius: 4px;
-  position: relative;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background: #fff;
+    padding: 20px 25px;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.modal h2 {
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-}
+/* ===== АДАПТИВНОСТЬ ===== */
 
-/* Responsive adjustments */
+/* Планшеты и телефоны */
 @media (max-width: 768px) {
-  #menu {
-    float: none;
-    clear: both;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease-in-out;
-  }
 
-  #menu.active {
-    max-height: 350px;
-  }
+    .nav-toggle {
+        display: block;
+    }
 
-  #menu li {
-    display: block;
-    margin: 0;
-    padding: 10px 0;
-    border-top: 1px solid #eee;
-  }
+    #menu {
+        float: none;
+        clear: both;
+        max-height: 0;
+        overflow: hidden;
+    }
 
-  #menu li a {
-    padding-left: 10px;
-  }
+    #menu li {
+        display: block;
+        margin: 0;
+        border-top: 1px solid #eee;
+    }
 
-  .nav-toggle {
-    display: block;
-  }
+    #menu a {
+        line-height: 35px;
+        padding-left: 5px;
+    }
 
-  .posts-list,
-  aside {
-    float: none;
-    width: 100%;
-  }
+    .posts-list,
+    aside {
+        float: none;
+        width: 100%;
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
+/* Очень маленькие экраны */
 @media (max-width: 480px) {
-  .post-title {
-    font-size: 20px;
-  }
+    .post-title {
+        font-size: 20px;
+    }
 }

@@ -1,45 +1,58 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Toggle navigation menu on mobile
-  var navToggle = document.querySelector('.nav-toggle');
-  var menu = document.getElementById('menu');
-  if (navToggle) {
-    navToggle.addEventListener('click', function() {
-      menu.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function () {
+    // ===== Мобильное меню (бургер) =====
+    const navToggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('menu');
+
+    if (navToggle && menu) {
+        navToggle.addEventListener('click', function () {
+            menu.classList.toggle('active');
+        });
+    }
+
+    // ===== Модальное окно для "Подробнее" =====
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.querySelector('.modal-close');
+
+    // Кнопки "Подробнее"
+    const moreButtons = document.querySelectorAll('.more-btn');
+
+    moreButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const post = btn.closest('.post');
+            if (!post) return;
+
+            const title = post.getAttribute('data-title') || post.querySelector('.post-title')?.textContent || '';
+            const info = post.getAttribute('data-info') || '';
+
+            modalTitle.textContent = title;
+            modalText.textContent = info;
+
+            modal.classList.add('active');
+        });
     });
-  }
 
-  // Modal functionality
-  var modal = document.getElementById('modal');
-  var modalTitle = document.getElementById('modal-title');
-  var modalText = document.getElementById('modal-text');
-  var modalClose = document.querySelector('.modal-close');
-
-  // Open modal on "Подробнее" click
-  var moreButtons = document.querySelectorAll('.more-btn');
-  moreButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var post = btn.closest('.post');
-      var title = post.getAttribute('data-title');
-      var info = post.getAttribute('data-info');
-      modalTitle.textContent = title;
-      modalText.textContent = info;
-      modal.classList.add('active');
-    });
-  });
-
-  // Close modal when clicking close button
-  if (modalClose) {
-    modalClose.addEventListener('click', function() {
-      modal.classList.remove('active');
-    });
-  }
-
-  // Close modal when clicking outside the modal content
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
+    // Закрытие модального окна
+    function closeModal() {
         modal.classList.remove('active');
-      }
+    }
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Закрытие по клику на фон
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
     });
-  }
+
+    // Закрытие по Esc
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
